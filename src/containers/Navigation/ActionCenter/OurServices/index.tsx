@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, BoxProps, Button, styled } from '@mui/material';
+import { Box, BoxProps, Button, Tooltip, styled } from '@mui/material';
 import Link from 'next/link';
 import { ButtonProps } from '@/interfaces/ButtonProps';
+import ourServices from './services';
 
 
 const StyledLi = styled('li')(({ theme }) => ({
@@ -26,6 +27,7 @@ const StyledLink = styled(Button)<StyledLinkProps>(({ theme }) => ({
   },
 }));
 
+
 interface OurServicesContainerProps extends BoxProps {
   children?: React.ReactNode;
 };
@@ -33,32 +35,21 @@ interface OurServicesContainerProps extends BoxProps {
 const OurServicesContainer: React.FC<OurServicesContainerProps> = (props) => {
   return (
     <Box {...props}>
-      <StyledLi>
-        <StyledLink
-          disabled
-          href="/jobs"
-          component={Link}
-        >
-          Jobs
-        </StyledLink>
-
-      </StyledLi>
-      <StyledLi>
-        <StyledLink
-          disabled
-          href="/studios"
-        >
-          Studios
-        </StyledLink>
-      </StyledLi>
-      <StyledLi>
-        <StyledLink
-          disabled
-          href="/production"
-        >
-          Production
-        </StyledLink>
-      </StyledLi>
+      {
+        Object.entries(ourServices).map(([key, value]) => (
+          <Tooltip key={key} title='Coming soon'>
+            <StyledLi>
+              <StyledLink
+                disabled
+                href={value.link}
+                component={Link}
+              >
+                {key}
+              </StyledLink>
+            </StyledLi>
+          </Tooltip>
+        ))
+      }
     </Box>
   )
 };

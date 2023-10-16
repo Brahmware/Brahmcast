@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, styled } from '@mui/material';
+import { Button, Tooltip, styled } from '@mui/material';
 
 const StyledButton = styled(Button)(({ theme }) => ({
   minWidth: '8rem',
@@ -28,14 +28,17 @@ const CtActions: React.FC<CtActionsProps> = (props) => {
           Sign Up
         </StyledButton>
       </StyledLi>
-      <StyledLi>
-        <StyledButton
-          variant='contained'
-          color='primary'
-        >
-          Login
-        </StyledButton>
-      </StyledLi>
+      <Tooltip title='Coming soon'>
+        <StyledLi>
+          <StyledButton
+            disabled
+            variant='contained'
+            color='primary'
+          >
+            Login
+          </StyledButton>
+        </StyledLi>
+      </Tooltip>
     </ul>
   )
 }
