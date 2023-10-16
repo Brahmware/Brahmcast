@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import type { NextPage } from "next";
+import { Box } from "@mui/material";
 
 const MetaData: React.FC = () => {
   return (
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
   return (
     <React.Fragment>
       <MetaData />
+      <Box sx={{ height: "100%", width: "100%", background: 'aquamarine' }}>
+      </Box>
     </React.Fragment>
   );
 };

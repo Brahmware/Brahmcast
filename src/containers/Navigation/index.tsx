@@ -3,10 +3,11 @@ import { alpha, styled } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import ActionCenter from './ActionCenter';
+import { UI } from '@/utils/consts';
 
 const StyledLink = styled(Link)(({ theme }) => ({
-  minWidth: '18rem',
-  width: '18rem',
+  minWidth: '16rem',
+  width: '16rem',
   height: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -30,16 +31,18 @@ const Navigation: React.FC<NavigationProps> = (props) => {
 };
 
 export default styled(Navigation)(({ theme }) => ({
-  position: 'sticky',
+  position: 'absolute',
   top: 0,
   left: 0,
   right: 0,
   width: "100%",
-  height: "6rem",
+  height: UI.headerHeight,
   background: `
     linear-gradient(
       180deg,
-      ${theme.palette.background.default} 65%,
+      ${theme.palette.background.default} 40%,
+      ${alpha(theme.palette.background.default, 0.75)} 60%,
+      ${alpha(theme.palette.background.default, 0.33)} 80%,
       ${alpha(theme.palette.background.default, 0)} 100%
     )
   `,

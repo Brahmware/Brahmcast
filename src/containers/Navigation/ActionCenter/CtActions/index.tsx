@@ -2,12 +2,11 @@ import React from 'react';
 import { Button, Tooltip, styled } from '@mui/material';
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  minWidth: '8rem',
+  minWidth: '6rem',
 }));
 
 const StyledLi = styled('li')(({ theme }) => ({
   listStyle: 'none',
-  margin: '0 ' + theme.spacing(2),
   '&:last-of-type': {
     marginRight: 0,
   },
@@ -35,13 +34,13 @@ const CtActions: React.FC<CtActionsProps> = (props) => {
             variant='contained'
             color='primary'
           >
-            Login
+            Sign In
           </StyledButton>
         </StyledLi>
       </Tooltip>
     </ul>
   )
-}
+};
 
 export default styled(CtActions)(({ theme }) => ({
   display: 'flex',
@@ -50,4 +49,5 @@ export default styled(CtActions)(({ theme }) => ({
   alignItems: 'center',
   padding: 0,
   margin: 0,
+  marginLeft: theme.spacing(2),
 }));
