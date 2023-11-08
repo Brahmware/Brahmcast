@@ -2,6 +2,8 @@ import React from "react";
 import Head from "next/head";
 import type { NextPage } from "next";
 import { Box } from "@mui/material";
+import HomeLayout from "@/layouts/HomeLayout";
+import DisplayFeature from "@/containers/DisplayFeature";
 
 const MetaData: React.FC = () => {
   return (
@@ -16,8 +18,12 @@ const Home: NextPage = () => {
   return (
     <React.Fragment>
       <MetaData />
-      <Box sx={{ height: "100%", width: "100%", background: 'aquamarine' }}>
-      </Box>
+      <HomeLayout>
+        <Box sx={{ backgroundColor: "greenyellow" }}>
+          <h1>Main Content</h1>
+        </Box>
+        <DisplayFeature />
+      </HomeLayout>
     </React.Fragment>
   );
 };

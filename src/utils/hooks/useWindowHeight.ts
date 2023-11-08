@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export const useWindowHeight = () => {
-  const [height, setHeight] = useState(window.innerHeight);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
     const handleResize = () => setHeight(window.innerHeight);

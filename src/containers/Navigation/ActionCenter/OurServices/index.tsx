@@ -6,7 +6,15 @@ import ourServices from './services';
 
 
 const StyledLi = styled('li')(({ theme }) => ({
-  margin: `0 ${theme.spacing(2)}`,
+  margin: `0 ${theme.spacing(1.5)}`,
+
+  '&:first-of-type': {
+    marginLeft: theme.spacing(2),
+  },
+
+  '&:last-of-type': {
+    marginRight: theme.spacing(2),
+  },
 }));
 
 interface StyledLinkProps extends ButtonProps {

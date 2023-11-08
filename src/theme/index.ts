@@ -1,5 +1,5 @@
 import { ThemeOptions as MuiThemeOptions, createTheme } from "@mui/material/styles";
-import colors from "./Colors";
+import colors, { Colors } from "./Colors";
 import { Transitions, transitions } from "./Transitions";
 import { Poppins } from 'next/font/google';
  
@@ -11,6 +11,7 @@ const poppins = Poppins({
 
 interface ThemeOptions extends MuiThemeOptions {
   Transitions?: Transitions;
+  Colors?: Colors;
 }
 
 const themeOptions: ThemeOptions = {
@@ -49,6 +50,10 @@ const themeOptions: ThemeOptions = {
       primary: colors.dhenu,
       secondary: colors.slogan,
     },
+    background: {
+      default: colors.matmaila,
+      paper: colors.white,
+    },
   },
 
   components: {
@@ -71,7 +76,7 @@ const themeOptions: ThemeOptions = {
     },
   },
 
-
+  Colors: colors,
   Transitions: transitions,
 };
 

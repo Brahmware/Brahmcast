@@ -41,3 +41,10 @@ export interface OurNetworkIconProps extends UtilityIconProps {
   hovered?: boolean;
   active?: boolean;
 };
+
+export interface MainNavigationIconProps extends UtilityIconProps {
+  color?: string;
+  size?: "small" | "medium" | "large";
+  hovered?: boolean;
+  active?: boolean;
+};

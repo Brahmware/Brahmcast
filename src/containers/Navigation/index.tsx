@@ -1,9 +1,21 @@
 import BrahmcastFullLogo from '@/icons/logo/BrahmcastFullLogo';
-import { alpha, styled } from '@mui/material';
+import { Box, alpha, styled } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import ActionCenter from './ActionCenter';
 import { UI } from '@/utils/consts';
+
+const NavWrapper = styled(Box)(({ theme }) => ({
+  height: '100%',
+  width: '100%',
+  maxWidth: theme.breakpoints.values.xl,
+  margin: '0 auto',
+  padding: `0 ${theme.spacing(2)}`,
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+}));
 
 const StyledLink = styled(Link)(({ theme }) => ({
   minWidth: '16rem',
@@ -22,10 +34,12 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = (props) => {
   return (
     <nav {...props}>
-      <StyledLink href="/">
-        <BrahmcastFullLogo />
-      </StyledLink>
-      <ActionCenter />
+      <NavWrapper>
+        <StyledLink href="/">
+          <BrahmcastFullLogo />
+        </StyledLink>
+        <ActionCenter />
+      </NavWrapper>
     </nav>
   )
 };
@@ -37,18 +51,5 @@ export default styled(Navigation)(({ theme }) => ({
   right: 0,
   width: "100%",
   height: UI.headerHeight,
-  background: `
-    linear-gradient(
-      180deg,
-      ${theme.palette.background.default} 40%,
-      ${alpha(theme.palette.background.default, 0.75)} 60%,
-      ${alpha(theme.palette.background.default, 0.33)} 80%,
-      ${alpha(theme.palette.background.default, 0)} 100%
-    )
-  `,
-  padding: `0 ${theme.spacing(2)}`,
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  background: UI.gradientWhite(180),
 }));
